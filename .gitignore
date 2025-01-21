@@ -1,0 +1,6 @@
+/.venv
+/altprv.txt
+/altpub.txt
+/config.json
+/private_keys.txt
+/*.har
