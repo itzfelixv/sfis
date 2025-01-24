@@ -63,7 +63,7 @@ To Contribute:
 4. Submit a pull request with a description of your changes.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE]() file for more details.
+This project is licensed under the CC BY-NC 4.0 License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 For any questions or support, feel free to reach out at [itzfelixv@gmail.com](mailto:itzfelixv@gmail.com).
