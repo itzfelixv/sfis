@@ -270,7 +270,7 @@ class SFI:
 
 			tx_hash = onchain_result['tx']
 			raw_tx = f"0x{self.sfi_web3.eth.get_raw_transaction(tx_hash).hex()}"
-			ts = int(time.time())
+			ts = int(time.time() * 1000.0)
 
 			raw_json = {
 				"direction": 1,
@@ -282,7 +282,7 @@ class SFI:
 				"data": "0x",
 				"logIndex": 0,
 				"blockNumber": 0,
-				"transactionHash": tx_hash,
+				"transactionHash": f"0x{tx_hash}",
 				"timestamp": ts,
 				"messageStatus": 2,
 				"button": True,
@@ -364,7 +364,7 @@ def run(pk: str, config: Dict[str, int]) -> None:
 		(sfi.stake, config.get("stakeAmount"), 2),
 		(sfi.unstake, config.get("unstakeAmount"), 1),
 		(sfi.claim, None, 2),
-		(sfi.initWithdrawal, config.get("bridgeAmount"), 5)
+		(sfi.initWithdrawal, config.get("bridgeAmount"), 1)
 	]
 
 	for operation, amount, max_attempts in operations:
@@ -393,7 +393,7 @@ def setup(auto: bool) -> None:
 				print("Error: Please enter valid numeric values for the amounts.")
 				return
 		else:
-			wrapAmount = 3
+			wrapAmount = 2
 			unwrapAmount = 1
 			stakeAmount = 1
 			unstakeAmount = 1
