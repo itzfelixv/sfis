@@ -28,7 +28,16 @@ class SFI:
 		self.address = self.sep_web3.eth.account.from_key(self.pk).address
 
 		self.contracts = {
-			'sep': {},
+			'sep': {
+				'portal': {
+					'ca': '0x776CF4e50c7285810e4E25A79de56aA4E7116876',
+					'abi': [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"BadTarget","type":"error"},{"inputs":[],"name":"CallPaused","type":"error"},{"inputs":[],"name":"ContentLengthMismatch","type":"error"},{"inputs":[],"name":"EmptyItem","type":"error"},{"inputs":[],"name":"GasEstimation","type":"error"},{"inputs":[],"name":"InvalidDataRemainder","type":"error"},{"inputs":[],"name":"InvalidHeader","type":"error"},{"inputs":[],"name":"LargeCalldata","type":"error"},{"inputs":[],"name":"NoValue","type":"error"},{"inputs":[],"name":"NonReentrant","type":"error"},{"inputs":[],"name":"OnlyCustomGasToken","type":"error"},{"inputs":[],"name":"OutOfGas","type":"error"},{"inputs":[],"name":"SmallGasLimit","type":"error"},{"inputs":[],"name":"TransferFailed","type":"error"},{"inputs":[],"name":"Unauthorized","type":"error"},{"inputs":[],"name":"UnexpectedList","type":"error"},{"inputs":[],"name":"UnexpectedString","type":"error"},{"anonymous":False,"inputs":[{"indexed":False,"internalType":"uint8","name":"version","type":"uint8"}],"name":"Initialized","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"from","type":"address"},{"indexed":True,"internalType":"address","name":"to","type":"address"},{"indexed":True,"internalType":"uint256","name":"version","type":"uint256"},{"indexed":False,"internalType":"bytes","name":"opaqueData","type":"bytes"}],"name":"TransactionDeposited","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"bytes32","name":"withdrawalHash","type":"bytes32"},{"indexed":False,"internalType":"bool","name":"success","type":"bool"}],"name":"WithdrawalFinalized","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"bytes32","name":"withdrawalHash","type":"bytes32"},{"indexed":True,"internalType":"address","name":"from","type":"address"},{"indexed":True,"internalType":"address","name":"to","type":"address"}],"name":"WithdrawalProven","type":"event"},{"inputs":[],"name":"balance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_to","type":"address"},{"internalType":"uint256","name":"_mint","type":"uint256"},{"internalType":"uint256","name":"_value","type":"uint256"},{"internalType":"uint64","name":"_gasLimit","type":"uint64"},{"internalType":"bool","name":"_isCreation","type":"bool"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"depositERC20Transaction","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_to","type":"address"},{"internalType":"uint256","name":"_value","type":"uint256"},{"internalType":"uint64","name":"_gasLimit","type":"uint64"},{"internalType":"bool","name":"_isCreation","type":"bool"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"depositTransaction","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"donateETH","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"components":[{"internalType":"uint256","name":"nonce","type":"uint256"},{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"target","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"},{"internalType":"uint256","name":"gasLimit","type":"uint256"},{"internalType":"bytes","name":"data","type":"bytes"}],"internalType":"struct Types.WithdrawalTransaction","name":"_tx","type":"tuple"}],"name":"finalizeWithdrawalTransaction","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"name":"finalizedWithdrawals","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"guardian","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"contract L2OutputOracle","name":"_l2Oracle","type":"address"},{"internalType":"contract SystemConfig","name":"_systemConfig","type":"address"},{"internalType":"contract SuperchainConfig","name":"_superchainConfig","type":"address"}],"name":"initialize","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_l2OutputIndex","type":"uint256"}],"name":"isOutputFinalized","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"l2Oracle","outputs":[{"internalType":"contract L2OutputOracle","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"l2Sender","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint64","name":"_byteCount","type":"uint64"}],"name":"minimumGasLimit","outputs":[{"internalType":"uint64","name":"","type":"uint64"}],"stateMutability":"pure","type":"function"},{"inputs":[],"name":"params","outputs":[{"internalType":"uint128","name":"prevBaseFee","type":"uint128"},{"internalType":"uint64","name":"prevBoughtGas","type":"uint64"},{"internalType":"uint64","name":"prevBlockNum","type":"uint64"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"paused","outputs":[{"internalType":"bool","name":"paused_","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"uint256","name":"nonce","type":"uint256"},{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"target","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"},{"internalType":"uint256","name":"gasLimit","type":"uint256"},{"internalType":"bytes","name":"data","type":"bytes"}],"internalType":"struct Types.WithdrawalTransaction","name":"_tx","type":"tuple"},{"internalType":"uint256","name":"_l2OutputIndex","type":"uint256"},{"components":[{"internalType":"bytes32","name":"version","type":"bytes32"},{"internalType":"bytes32","name":"stateRoot","type":"bytes32"},{"internalType":"bytes32","name":"messagePasserStorageRoot","type":"bytes32"},{"internalType":"bytes32","name":"latestBlockhash","type":"bytes32"}],"internalType":"struct Types.OutputRootProof","name":"_outputRootProof","type":"tuple"},{"internalType":"bytes[]","name":"_withdrawalProof","type":"bytes[]"}],"name":"proveWithdrawalTransaction","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"name":"provenWithdrawals","outputs":[{"internalType":"bytes32","name":"outputRoot","type":"bytes32"},{"internalType":"uint128","name":"timestamp","type":"uint128"},{"internalType":"uint128","name":"l2OutputIndex","type":"uint128"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_token","type":"address"},{"internalType":"uint8","name":"_decimals","type":"uint8"},{"internalType":"bytes32","name":"_name","type":"bytes32"},{"internalType":"bytes32","name":"_symbol","type":"bytes32"}],"name":"setGasPayingToken","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"superchainConfig","outputs":[{"internalType":"contract SuperchainConfig","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"systemConfig","outputs":[{"internalType":"contract SystemConfig","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"version","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"pure","type":"function"},{"stateMutability":"payable","type":"receive"}]
+				},
+				'oracle': {
+					'ca': '0x1c56f18D964CB77743c1f6E57AcA0D9e783aDcfc',
+					'abi': [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":False,"inputs":[{"indexed":False,"internalType":"uint8","name":"version","type":"uint8"}],"name":"Initialized","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"bytes32","name":"outputRoot","type":"bytes32"},{"indexed":True,"internalType":"uint256","name":"l2OutputIndex","type":"uint256"},{"indexed":True,"internalType":"uint256","name":"l2BlockNumber","type":"uint256"},{"indexed":False,"internalType":"uint256","name":"l1Timestamp","type":"uint256"}],"name":"OutputProposed","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"uint256","name":"prevNextOutputIndex","type":"uint256"},{"indexed":True,"internalType":"uint256","name":"newNextOutputIndex","type":"uint256"}],"name":"OutputsDeleted","type":"event"},{"inputs":[],"name":"CHALLENGER","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"FINALIZATION_PERIOD_SECONDS","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"L2_BLOCK_TIME","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"PROPOSER","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"SUBMISSION_INTERVAL","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"challenger","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_l2BlockNumber","type":"uint256"}],"name":"computeL2Timestamp","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_l2OutputIndex","type":"uint256"}],"name":"deleteL2Outputs","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"finalizationPeriodSeconds","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_l2OutputIndex","type":"uint256"}],"name":"getL2Output","outputs":[{"components":[{"internalType":"bytes32","name":"outputRoot","type":"bytes32"},{"internalType":"uint128","name":"timestamp","type":"uint128"},{"internalType":"uint128","name":"l2BlockNumber","type":"uint128"}],"internalType":"struct Types.OutputProposal","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_l2BlockNumber","type":"uint256"}],"name":"getL2OutputAfter","outputs":[{"components":[{"internalType":"bytes32","name":"outputRoot","type":"bytes32"},{"internalType":"uint128","name":"timestamp","type":"uint128"},{"internalType":"uint128","name":"l2BlockNumber","type":"uint128"}],"internalType":"struct Types.OutputProposal","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_l2BlockNumber","type":"uint256"}],"name":"getL2OutputIndexAfter","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_submissionInterval","type":"uint256"},{"internalType":"uint256","name":"_l2BlockTime","type":"uint256"},{"internalType":"uint256","name":"_startingBlockNumber","type":"uint256"},{"internalType":"uint256","name":"_startingTimestamp","type":"uint256"},{"internalType":"address","name":"_proposer","type":"address"},{"internalType":"address","name":"_challenger","type":"address"},{"internalType":"uint256","name":"_finalizationPeriodSeconds","type":"uint256"}],"name":"initialize","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"l2BlockTime","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"latestBlockNumber","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"latestOutputIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"nextBlockNumber","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"nextOutputIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"_outputRoot","type":"bytes32"},{"internalType":"uint256","name":"_l2BlockNumber","type":"uint256"},{"internalType":"bytes32","name":"_l1BlockHash","type":"bytes32"},{"internalType":"uint256","name":"_l1BlockNumber","type":"uint256"}],"name":"proposeL2Output","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"proposer","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"startingBlockNumber","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"startingTimestamp","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"submissionInterval","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"version","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"}]
+				}
+			},
 			'sfi': {
 				'wsfi': {
 					'ca': '0x6dC404EFd04B880B0Ab5a26eF461b63A12E3888D',
@@ -92,9 +101,55 @@ class SFI:
 		inf = self._userInfo()
 		return int(inf[2] - inf[1])
 
-	def approveStake(self, _amount: int = 999_999_999 * (10**18)) -> dict:
+	def _getL2OutputIndexAfter(self, _l2BlockNumber: int) -> int:
+		contract = self._getContract('oracle', 'sep')
+		return contract.functions.getL2OutputIndexAfter(_l2BlockNumber).call()
+
+	def _getL2Output(self, _l2OutputIndex: int) -> int:
+		contract = self._getContract('oracle', 'sep')
+		return contract.functions.getL2Output(_l2OutputIndex).call()
+
+	def _isWithdrawalProven(self, _withdrawalHash: str | bytes) -> bool:
+		contract = self._getContract('portal', 'sep')
+		return contract.functions.provenWithdrawals(_withdrawalHash).call() != [b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', 0, 0]
+	
+	def _isWithdrawalFinalized(self, _withdrawalHash: str | bytes) -> bool:
+		contract = self._getContract('portal', 'sep')
+		try:
+			finalized = contract.functions.finalizedWithdrawals(_withdrawalHash).call()
+			return finalized
+		except:
+			return False 
+
+	def _getEventData(self, tx_hash: str) -> dict:
+		receipt = self.sfi_web3.eth.get_transaction_receipt(tx_hash)
+		event_abi = next((item for item in self.contracts["sfi"]["msgpasser"]['abi'] if item.get("type") == "event" and item.get("name") == "MessagePassed"), None)
+		event_signature = self.sfi_web3.keccak(text="MessagePassed(uint256,address,address,uint256,uint256,bytes,bytes32)").hex()
+
+		if event_abi:
+			for log in receipt['logs']:
+				if log["topics"][0].hex() == event_signature:
+					indexed_inputs = [i for i in event_abi["inputs"] if i["indexed"]]
+					decoded_topics = {}
+					for i, topic in enumerate(log["topics"][1:], start=0):
+						param = indexed_inputs[i]
+						decoded_topics[param["name"]] = self.sfi_web3.codec.decode([param["type"]], bytes.fromhex(topic.hex()))[0]
+
+					non_indexed_inputs = [i for i in event_abi["inputs"] if not i["indexed"]]
+					non_indexed_types = [i["type"] for i in non_indexed_inputs]
+					non_indexed_values = self.sfi_web3.codec.decode(
+						non_indexed_types, bytes.fromhex(log["data"].hex())
+					)
+					decoded_data = {param["name"]: value for param, value in zip(non_indexed_inputs, non_indexed_values)}
+	
+					decoded_event = {**decoded_topics, **decoded_data}
+					return decoded_event
+		else:
+			return {}
+
+	def approveStake(self, _amount: int) -> dict:
 		"""
-		Approves staking a specific amount of tokens. (Default: 999.999.999)
+		Approves staking a specific amount of tokens.
 		"""
 		try:
 			contract = self._getContract('wsfi')
@@ -298,8 +353,7 @@ class SFI:
 
 			logger.info(resp_json)
 
-			if response.status_code == 200:
-				
+			if response.status_code == 200:	
 				return {
 					"status": "success",
 					"msg": resp_json
@@ -316,6 +370,188 @@ class SFI:
 				"status": "failed",
 				"msg": str(e)
 			}
+	
+	def proveWithdrawal(self, tx_hash: str) -> dict:
+		"""
+		Proves a withdrawal by using the specified transaction hash.
+		"""
+		try:
+			contract = self._getContract('portal', 'sep')
+			nonce = self.sep_web3.eth.get_transaction_count(self.address)
+			tx_receipt = self.sfi_web3.eth.get_transaction_receipt(tx_hash)
+			tx_block_number = tx_receipt['blockNumber']	
+
+			event_data = self._getEventData(tx_hash)
+			if not event_data:
+				logger.error("Failed to fetch event data for the transaction.")
+				return {'status': 'failed', 'error': 'Event data not found'}
+			
+			try:
+				output_index = self._getL2OutputIndexAfter(tx_block_number)
+			except Exception as e: # aka. Output not finalized
+				logger.error(f"Failed to get output index. Try again later.")
+				return {'status': 'failed', 'error': 'Failed to retrieve output index. Try again later.'}
+
+			l2_output = self._getL2Output(output_index)
+			
+			withdrawal_hash = event_data.get('withdrawalHash')
+			if self._isWithdrawalProven(withdrawal_hash):
+				logger.info("Withdrawal is already proven.")
+				return {'status': 'success'}
+
+			tx_nonce = event_data.get('nonce')
+			value = event_data.get('value')
+
+			if not (withdrawal_hash and tx_nonce and value):
+				logger.error("Incomplete event data.")
+				return {'status': 'failed', 'error': 'Incomplete event data'}
+
+			hashed = self.sep_web3.solidity_keccak(['bytes32', 'uint256'], [withdrawal_hash, 0])
+
+			block_number = l2_output[2]
+			block = self.sfi_web3.eth.get_block(block_number)
+
+			proof_data = self.sfi_web3.eth.get_proof(
+				"0x4200000000000000000000000000000000000016",
+				[hashed],
+				block_number
+			)
+			if not proof_data or 'storageProof' not in proof_data or not proof_data['storageProof']:
+				logger.error("Proof data retrieval failed.")
+				return {'status': 'failed', 'error': 'Proof data retrieval failed'}
+
+			proof = proof_data['storageProof'][0]['proof']
+			storage_hash = proof_data['storageHash']
+			
+			tx = contract.functions.proveWithdrawalTransaction(
+				(tx_nonce, self.address, self.address, value, event_data['gasLimit'], "0x"),
+				output_index,
+				(b'\x00' * 32, block['stateRoot'], storage_hash, block['hash']),
+				proof
+			).build_transaction({
+				"chainId": self.sep_web3.eth.chain_id,
+				"from": self.address,
+				"nonce": nonce
+			})
+
+			return self._executeTransaction(tx, "sep")
+
+		except Exception as e:
+			logger.error(f"Error during proveWithdrawal: {e}")
+			return {'status': 'failed', 'error': str(e)}
+
+	def finalizeWithdrawal(self, tx_hash: str) -> dict:
+		"""
+		Finalize the withdrawal with the specified transaction hash.
+		"""
+		try:
+			contract = self._getContract('portal', 'sep')
+			nonce = self.sep_web3.eth.get_transaction_count(self.address)
+
+			event_data = self._getEventData(tx_hash)
+			if not event_data:
+				logger.error("Failed to fetch event data for the transaction.")
+				return {'status': 'failed', 'error': 'Event data not found'}
+
+			withdrawal_hash = event_data.get('withdrawalHash')
+			if self._isWithdrawalFinalized(withdrawal_hash):
+				logger.info("Withdrawal already finalized.")
+				return {'status': 'success'}
+
+			tx_nonce = event_data.get('nonce')
+			value = event_data.get('value')
+
+			if not (withdrawal_hash and tx_nonce and value):
+				logger.error("Incomplete event data.")
+				return {'status': 'failed', 'error': 'Incomplete event data'}
+
+			tx = contract.functions.finalizeWithdrawalTransaction(
+				(tx_nonce, self.address, self.address, value, event_data['gasLimit'], "0x"),
+			).build_transaction({
+				"chainId": self.sep_web3.eth.chain_id,
+				"from": self.address,
+				"nonce": nonce
+			})
+
+			return self._executeTransaction(tx, "sep")
+		except Exception as e:
+			logger.error(f"Error during finalizeWithdrawal: {str(e)}")
+			return {'status': 'failed', 'error': str(e)}
+
+		
+	def getWithdrawalList(self) -> dict:
+		"""
+		Retrieves a list of withdrawals needs to be proven.
+		"""
+		try:
+			response = requests.get(f"{self.GELATO_API}?isWithdraw=true&slug=singularity-finance-testnet&fromAddress={self.address}")
+			resp_json = response.json()
+
+			# Get the latest 5 withdrawals
+			withdrawals = resp_json['data'][-5:]
+			logger.info(f"Got {len(withdrawals)} withdrawal(s).")
+			return withdrawals
+		
+		except Exception as e:
+			logger.error(f"Error during getWithdrawalList: {str(e)}")
+			return []
+
+	def proveWithdrawals(self) -> list:
+		"""
+		Handles the prove withdrawal process.
+		"""
+		try:
+			withdrawals = self.getWithdrawalList()
+			if not withdrawals:
+				logger.info("No withdrawals found.")
+				return {'status': 'success', 'msg': 'No withdrawals found.'}
+
+			for w in withdrawals:
+				logger.info(f"{'-'*100}")
+				tx_hash = w['transactionHash']
+				logger.info(f"Processing withdrawal: {tx_hash}")
+				
+				# Prove the withdrawal
+				prove_res = self.proveWithdrawal(tx_hash)
+				if prove_res.get('status') != 'success':
+					continue 
+
+				logger.info("Successfully processed withdrawal.")
+			
+			return {'status': 'success', 'msg': 'Processed all withdrawals.'}
+
+		except Exception as e:
+			logger.error(f"Error during proveWithdraws: {str(e)}")
+			return {'status': 'failed', 'error': str(e)}
+
+	def finalizeWithdrawals(self) -> list:
+		"""
+		Handles the finalize withdrawal process.
+		"""
+		try:
+			withdrawals = self.getWithdrawalList()
+			if not withdrawals:
+				logger.info("No withdrawals found.")
+				return {'status': 'success', 'msg': 'No withdrawals found.'}
+
+			for w in withdrawals:
+				logger.info(f"{'-'*100}")
+				tx_hash = w['transactionHash']
+				logger.info(f"Processing withdrawal: {tx_hash}")
+				
+				# Finalize the withdrawal
+				final_res = self.finalizeWithdrawal(tx_hash)
+				if final_res.get('status') != 'success':
+					continue 
+
+				logger.info("Successfully processed withdrawal.")
+			
+			return {'status': 'success', 'msg': 'Processed all withdrawals.'}
+
+		except Exception as e:
+			logger.error(f"Error during proveWithdraws: {str(e)}")
+			return {'status': 'failed', 'error': str(e)}
+
 
 def executeOperation(operation, amount: int, times: int) -> None:
     """
@@ -343,13 +579,9 @@ def executeOperation(operation, amount: int, times: int) -> None:
         time.sleep(5) 
 
 
-def run(pk: str, config: Dict[str, int]) -> None:
+def run(pk: str, config: Dict[str, int], opr_type: int = 0) -> None:
 	"""
-	Executes the main workflow based on the given configuration.
-
-	Args:
-		pk (str): Private key for the wallet.
-		config (Dict[str, int]): Configuration with amounts for operations.
+	Executes the main workflow based on the given configuration
 	"""
 	if not config:
 		logger.error("Invalid configuration provided.")
@@ -358,14 +590,23 @@ def run(pk: str, config: Dict[str, int]) -> None:
 	sfi = SFI(private_key=pk)
 	logger.info(f"--- Address: {sfi.address} ---")
 
-	operations = [
-		(sfi.wrap, config.get("wrapAmount"), 2),
-		(sfi.unwrap, config.get("unwrapAmount"), 2),
-		(sfi.stake, config.get("stakeAmount"), 2),
-		(sfi.unstake, config.get("unstakeAmount"), 1),
-		(sfi.claim, None, 2),
-		(sfi.initWithdrawal, config.get("bridgeAmount"), 1)
-	]
+	if opr_type == 1:
+		operations = [
+			(sfi.proveWithdrawals, None, 1),
+		]
+	elif opr_type == 2:
+		operations = [
+			(sfi.finalizeWithdrawals, None, 1),
+		]
+	else:
+		operations = [
+			(sfi.wrap, config.get("wrapAmount"), 2),
+			(sfi.unwrap, config.get("unwrapAmount"), 2),
+			(sfi.stake, config.get("stakeAmount"), 2),
+			(sfi.unstake, config.get("unstakeAmount"), 1),
+			(sfi.claim, None, 2),
+			(sfi.initWithdrawal, config.get("bridgeAmount"), 5)
+		]
 
 	for operation, amount, max_attempts in operations:
 		logger.info(f"Starting operation: {operation.__name__}")
@@ -430,10 +671,13 @@ def main():
 	parser.add_argument("-a", "--auto", action="store_true", help="setup the script, using the pre-defined values")
 	parser.add_argument("-pk", type=str, help="run with a specified private key")
 	parser.add_argument("-f", "--file", type=str, help="read private keys from a file and run with each")
+	parser.add_argument("-P", "--prove", action="store_true", help="prove 5 most recently withdrawals")
+	parser.add_argument("-F", "--finalize", action="store_true", help="finalize 5 most recently withdrawals")
 
 	args = parser.parse_args()
 
 	config = None
+	opr_type = 0
 
 	if args.init:
 		setup(auto=args.auto)
@@ -447,7 +691,11 @@ def main():
 		except json.JSONDecodeError:
 			print("Error decoding JSON in 'config.json'.")
 			return
-		run(args.pk, config)
+		
+		if args.prove: opr_type = 1
+		elif args.finalize: opr_type = 2
+
+		run(args.pk, config, opr_type)
 	elif args.file:
 		try:
 			with open("config.json", "r") as f:
@@ -458,12 +706,16 @@ def main():
 		except json.JSONDecodeError:
 			print("Error decoding JSON in 'config.json'.")
 			return
+		
+		if args.prove: opr_type = 1
+		elif args.finalize: opr_type = 2
+
 		# Read private keys from file
 		with open(args.file, "r") as f:
 			private_keys = f.readlines()
 
 		for pk in private_keys:
-			run(pk.strip(), config)
+			run(pk.strip(), config, opr_type)
 	else:
 		print("Invalid arguments. Use -h or --help for usage information.")
 
