@@ -39,10 +39,20 @@ class SFI:
 				}
 			},
 			'sfi': {
+				# Tokens
 				'wsfi': {
 					'ca': '0x6dC404EFd04B880B0Ab5a26eF461b63A12E3888D',
 					'abi': [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"allowance","type":"uint256"},{"internalType":"uint256","name":"needed","type":"uint256"}],"name":"ERC20InsufficientAllowance","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"uint256","name":"balance","type":"uint256"},{"internalType":"uint256","name":"needed","type":"uint256"}],"name":"ERC20InsufficientBalance","type":"error"},{"inputs":[{"internalType":"address","name":"approver","type":"address"}],"name":"ERC20InvalidApprover","type":"error"},{"inputs":[{"internalType":"address","name":"receiver","type":"address"}],"name":"ERC20InvalidReceiver","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"}],"name":"ERC20InvalidSender","type":"error"},{"inputs":[{"internalType":"address","name":"spender","type":"address"}],"name":"ERC20InvalidSpender","type":"error"},{"inputs":[],"name":"WithdrawFailed","type":"error"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"owner","type":"address"},{"indexed":True,"internalType":"address","name":"spender","type":"address"},{"indexed":False,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"dst","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"from","type":"address"},{"indexed":True,"internalType":"address","name":"to","type":"address"},{"indexed":False,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"src","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdrawal","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"deposit","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}]
 				},
+				'aimm': {
+					'ca': '0xAa4aFA7C07405992e3f6799dCC260D389687077a',
+					'abi': [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"allowance","type":"uint256"},{"internalType":"uint256","name":"needed","type":"uint256"}],"name":"ERC20InsufficientAllowance","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"uint256","name":"balance","type":"uint256"},{"internalType":"uint256","name":"needed","type":"uint256"}],"name":"ERC20InsufficientBalance","type":"error"},{"inputs":[{"internalType":"address","name":"approver","type":"address"}],"name":"ERC20InvalidApprover","type":"error"},{"inputs":[{"internalType":"address","name":"receiver","type":"address"}],"name":"ERC20InvalidReceiver","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"}],"name":"ERC20InvalidSender","type":"error"},{"inputs":[{"internalType":"address","name":"spender","type":"address"}],"name":"ERC20InvalidSpender","type":"error"},{"inputs":[],"name":"WithdrawFailed","type":"error"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"owner","type":"address"},{"indexed":True,"internalType":"address","name":"spender","type":"address"},{"indexed":False,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"dst","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"from","type":"address"},{"indexed":True,"internalType":"address","name":"to","type":"address"},{"indexed":False,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"src","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdrawal","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"deposit","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}] 
+				},
+				'usdc': {
+					'ca': '0xD2ED81BE83B33218737Ca188EB9AC28b79C6A0F3',
+					'abi': [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"allowance","type":"uint256"},{"internalType":"uint256","name":"needed","type":"uint256"}],"name":"ERC20InsufficientAllowance","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"uint256","name":"balance","type":"uint256"},{"internalType":"uint256","name":"needed","type":"uint256"}],"name":"ERC20InsufficientBalance","type":"error"},{"inputs":[{"internalType":"address","name":"approver","type":"address"}],"name":"ERC20InvalidApprover","type":"error"},{"inputs":[{"internalType":"address","name":"receiver","type":"address"}],"name":"ERC20InvalidReceiver","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"}],"name":"ERC20InvalidSender","type":"error"},{"inputs":[{"internalType":"address","name":"spender","type":"address"}],"name":"ERC20InvalidSpender","type":"error"},{"inputs":[],"name":"WithdrawFailed","type":"error"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"owner","type":"address"},{"indexed":True,"internalType":"address","name":"spender","type":"address"},{"indexed":False,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"dst","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"from","type":"address"},{"indexed":True,"internalType":"address","name":"to","type":"address"},{"indexed":False,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"src","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdrawal","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"deposit","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}] 
+				},
+				# Contracts
 				'stake': {
 					'ca': '0x22Dbdc9e8dd7C5E409B014BBcb53a3ef39736515',
 					'abi': [{"inputs":[{"internalType":"address","name":"target","type":"address"}],"name":"AddressEmptyCode","type":"error"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"AddressInsufficientBalance","type":"error"},{"inputs":[],"name":"AlreadyInitialized","type":"error"},{"inputs":[],"name":"AlreadyInitializedOwner","type":"error"},{"inputs":[],"name":"CallerIsNotOwner","type":"error"},{"inputs":[],"name":"DepositTokenRecoveryNotAllowed","type":"error"},{"inputs":[],"name":"DepositsDisabled","type":"error"},{"inputs":[{"internalType":"uint256","name":"fee","type":"uint256"},{"internalType":"uint256","name":"maxFee","type":"uint256"}],"name":"ExceedsMaxEarlyUnlockFeePerDay","type":"error"},{"inputs":[{"internalType":"uint256","name":"period","type":"uint256"},{"internalType":"uint256","name":"maxPeriod","type":"uint256"}],"name":"ExceedsMaxLockingPeriod","type":"error"},{"inputs":[],"name":"FailedInnerCall","type":"error"},{"inputs":[],"name":"MissingAmount","type":"error"},{"inputs":[],"name":"MissingDepositToken","type":"error"},{"inputs":[],"name":"MissingOwner","type":"error"},{"inputs":[],"name":"MissingRewardsAPI","type":"error"},{"inputs":[],"name":"MissingToken","type":"error"},{"inputs":[],"name":"MissingZapperContract","type":"error"},{"inputs":[],"name":"ReentrancyGuardReentrantCall","type":"error"},{"inputs":[{"internalType":"uint256","name":"requestedUnlockDate","type":"uint256"},{"internalType":"uint256","name":"currentUnlockDate","type":"uint256"}],"name":"RequestedUnlockDateBeforeCurrent","type":"error"},{"inputs":[{"internalType":"address","name":"token","type":"address"}],"name":"SafeERC20FailedOperation","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"zapper","type":"address"}],"name":"SenderIsNotZapper","type":"error"},{"inputs":[{"internalType":"uint256","name":"requestedWithdrawal","type":"uint256"},{"internalType":"uint256","name":"currentBalance","type":"uint256"}],"name":"WithdrawalRequestExceedsDeposited","type":"error"},{"inputs":[],"name":"ZeroMaxEarlyUnlockFeePerDay","type":"error"},{"inputs":[],"name":"ZeroMaxLockingPeriodInDays","type":"error"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"user","type":"address"},{"indexed":False,"internalType":"uint256","name":"claimed","type":"uint256"}],"name":"Claimed","type":"event"},{"anonymous":False,"inputs":[{"indexed":False,"internalType":"address","name":"newInstance","type":"address"}],"name":"Cloned","type":"event"},{"anonymous":False,"inputs":[{"indexed":False,"internalType":"address","name":"admin","type":"address"},{"indexed":False,"internalType":"uint256","name":"fees","type":"uint256"}],"name":"CollectedFees","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"user","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"},{"indexed":False,"internalType":"uint256","name":"lockingPeriod","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":True,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"user","type":"address"},{"indexed":False,"internalType":"uint256","name":"fee","type":"uint256"},{"indexed":False,"internalType":"uint256","name":"secondsUntilUnlock","type":"uint256"}],"name":"PaidEarlyUnlockFee","type":"event"},{"anonymous":False,"inputs":[{"indexed":False,"internalType":"address","name":"admin","type":"address"},{"indexed":False,"internalType":"bool","name":"depositsEnabled","type":"bool"}],"name":"SetDepositsEnabled","type":"event"},{"anonymous":False,"inputs":[{"indexed":False,"internalType":"address","name":"admin","type":"address"},{"indexed":False,"internalType":"uint256","name":"earlyUnlockFeePerDay","type":"uint256"}],"name":"SetEarlyUnlockFeePerDay","type":"event"},{"anonymous":False,"inputs":[{"indexed":False,"internalType":"address","name":"admin","type":"address"},{"indexed":False,"internalType":"address","name":"zapperContract","type":"address"}],"name":"SetZapperContract","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"user","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdraw","type":"event"},{"inputs":[],"name":"MAX_EARLY_UNLOCK_FEE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MAX_EARLY_UNLOCK_FEE_PER_DAY","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MAX_LOCKING_PERIOD","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MAX_PERCENTAGE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"claim","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"clone","outputs":[{"internalType":"address","name":"newInstance","type":"address"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"collectFees","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"},{"internalType":"uint256","name":"_lockingPeriod","type":"uint256"}],"name":"deposit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_recipient","type":"address"},{"internalType":"uint256","name":"_amount","type":"uint256"},{"internalType":"uint256","name":"_lockingPeriod","type":"uint256"}],"name":"depositFor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"depositToken","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"depositsEnabled","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"earlyUnlockFeePerDay","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"earlyUnlockFees","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getClone","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_depositToken","type":"address"},{"internalType":"address","name":"_rewardsAPI","type":"address"},{"internalType":"uint256","name":"maxLockingPeriodInDays","type":"uint256"},{"internalType":"uint256","name":"maxEarlyUnlockFeePerDay","type":"uint256"}],"name":"initialize","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pending","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_user","type":"address"}],"name":"pendingFor","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_token","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"address","name":"to","type":"address"}],"name":"recoverUnsupportedTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"rewardToken","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"rewardsAPI","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bool","name":"_depositsEnabled","type":"bool"}],"name":"setDepositsEnabled","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_earlyUnlockFeePerDay","type":"uint256"}],"name":"setEarlyUnlockFeePerDay","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"initialOwner","type":"address"}],"name":"setOwnerAfterClone","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_zapperContract","type":"address"}],"name":"setZapperContract","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"totalScore","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"userInfo","outputs":[{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"uint256","name":"lockDate","type":"uint256"},{"internalType":"uint256","name":"unlockDate","type":"uint256"},{"internalType":"uint256","name":"score","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"withdrawAndClaim","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"zapperContract","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]
@@ -50,17 +60,35 @@ class SFI:
 				'msgpasser': {
 					'ca': '0x4200000000000000000000000000000000000016',
 					'abi': [{"anonymous":False,"inputs":[{"indexed":True,"internalType":"uint256","name":"nonce","type":"uint256"},{"indexed":True,"internalType":"address","name":"sender","type":"address"},{"indexed":True,"internalType":"address","name":"target","type":"address"},{"indexed":False,"internalType":"uint256","name":"value","type":"uint256"},{"indexed":False,"internalType":"uint256","name":"gasLimit","type":"uint256"},{"indexed":False,"internalType":"bytes","name":"data","type":"bytes"},{"indexed":False,"internalType":"bytes32","name":"withdrawalHash","type":"bytes32"}],"name":"MessagePassed","type":"event"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"WithdrawerBalanceBurnt","type":"event"},{"inputs":[],"name":"MESSAGE_VERSION","outputs":[{"internalType":"uint16","name":"","type":"uint16"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"burn","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_target","type":"address"},{"internalType":"uint256","name":"_gasLimit","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"initiateWithdrawal","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"messageNonce","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"name":"sentMessages","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"version","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"stateMutability":"payable","type":"receive"}]
+				},
+				'citeaRouter': {
+					'ca': '0xFEccff0ecf1cAa1669A71C5E00b51B48E4CBc6A1',
+					'abi': [{"inputs":[{"internalType":"address","name":"_factory","type":"address"},{"internalType":"address","name":"_WETH","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"WETH","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"tokenA","type":"address"},{"internalType":"address","name":"tokenB","type":"address"},{"internalType":"uint256","name":"amountADesired","type":"uint256"},{"internalType":"uint256","name":"amountBDesired","type":"uint256"},{"internalType":"uint256","name":"amountAMin","type":"uint256"},{"internalType":"uint256","name":"amountBMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"addLiquidity","outputs":[{"internalType":"uint256","name":"amountA","type":"uint256"},{"internalType":"uint256","name":"amountB","type":"uint256"},{"internalType":"uint256","name":"liquidity","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"token","type":"address"},{"internalType":"uint256","name":"amountTokenDesired","type":"uint256"},{"internalType":"uint256","name":"amountTokenMin","type":"uint256"},{"internalType":"uint256","name":"amountETHMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"addLiquidityETH","outputs":[{"internalType":"uint256","name":"amountToken","type":"uint256"},{"internalType":"uint256","name":"amountETH","type":"uint256"},{"internalType":"uint256","name":"liquidity","type":"uint256"}],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"factory","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOut","type":"uint256"},{"internalType":"uint256","name":"reserveIn","type":"uint256"},{"internalType":"uint256","name":"reserveOut","type":"uint256"}],"name":"getAmountIn","outputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"uint256","name":"reserveIn","type":"uint256"},{"internalType":"uint256","name":"reserveOut","type":"uint256"}],"name":"getAmountOut","outputs":[{"internalType":"uint256","name":"amountOut","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOut","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"}],"name":"getAmountsIn","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"}],"name":"getAmountsOut","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountA","type":"uint256"},{"internalType":"uint256","name":"reserveA","type":"uint256"},{"internalType":"uint256","name":"reserveB","type":"uint256"}],"name":"quote","outputs":[{"internalType":"uint256","name":"amountB","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"address","name":"tokenA","type":"address"},{"internalType":"address","name":"tokenB","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"},{"internalType":"uint256","name":"amountAMin","type":"uint256"},{"internalType":"uint256","name":"amountBMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"removeLiquidity","outputs":[{"internalType":"uint256","name":"amountA","type":"uint256"},{"internalType":"uint256","name":"amountB","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"token","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"},{"internalType":"uint256","name":"amountTokenMin","type":"uint256"},{"internalType":"uint256","name":"amountETHMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"removeLiquidityETH","outputs":[{"internalType":"uint256","name":"amountToken","type":"uint256"},{"internalType":"uint256","name":"amountETH","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"token","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"},{"internalType":"uint256","name":"amountTokenMin","type":"uint256"},{"internalType":"uint256","name":"amountETHMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"removeLiquidityETHSupportingFeeOnTransferTokens","outputs":[{"internalType":"uint256","name":"amountETH","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"token","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"},{"internalType":"uint256","name":"amountTokenMin","type":"uint256"},{"internalType":"uint256","name":"amountETHMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"bool","name":"approveMax","type":"bool"},{"internalType":"uint8","name":"v","type":"uint8"},{"internalType":"bytes32","name":"r","type":"bytes32"},{"internalType":"bytes32","name":"s","type":"bytes32"}],"name":"removeLiquidityETHWithPermit","outputs":[{"internalType":"uint256","name":"amountToken","type":"uint256"},{"internalType":"uint256","name":"amountETH","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"token","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"},{"internalType":"uint256","name":"amountTokenMin","type":"uint256"},{"internalType":"uint256","name":"amountETHMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"bool","name":"approveMax","type":"bool"},{"internalType":"uint8","name":"v","type":"uint8"},{"internalType":"bytes32","name":"r","type":"bytes32"},{"internalType":"bytes32","name":"s","type":"bytes32"}],"name":"removeLiquidityETHWithPermitSupportingFeeOnTransferTokens","outputs":[{"internalType":"uint256","name":"amountETH","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"tokenA","type":"address"},{"internalType":"address","name":"tokenB","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"},{"internalType":"uint256","name":"amountAMin","type":"uint256"},{"internalType":"uint256","name":"amountBMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"bool","name":"approveMax","type":"bool"},{"internalType":"uint8","name":"v","type":"uint8"},{"internalType":"bytes32","name":"r","type":"bytes32"},{"internalType":"bytes32","name":"s","type":"bytes32"}],"name":"removeLiquidityWithPermit","outputs":[{"internalType":"uint256","name":"amountA","type":"uint256"},{"internalType":"uint256","name":"amountB","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOut","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapETHForExactTokens","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactETHForTokens","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactETHForTokensSupportingFeeOnTransferTokens","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactTokensForETH","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactTokensForETHSupportingFeeOnTransferTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactTokensForTokens","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactTokensForTokensSupportingFeeOnTransferTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOut","type":"uint256"},{"internalType":"uint256","name":"amountInMax","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapTokensForExactETH","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOut","type":"uint256"},{"internalType":"uint256","name":"amountInMax","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapTokensForExactTokens","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}]
+				},
+				'citeaFactory': {
+					'ca': '0xd8388EECE67C003eF952D32c4E3943113C5f5608',
+					'abi': [{"inputs":[{"internalType":"address","name":"_feeToSetter","type":"address"}],"payable":False,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"token0","type":"address"},{"indexed":True,"internalType":"address","name":"token1","type":"address"},{"indexed":False,"internalType":"address","name":"pair","type":"address"},{"indexed":False,"internalType":"uint256","name":"","type":"uint256"}],"name":"PairCreated","type":"event"},{"constant":True,"inputs":[],"name":"INIT_CODE_PAIR_HASH","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"payable":False,"stateMutability":"view","type":"function"},{"constant":True,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"allPairs","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":False,"stateMutability":"view","type":"function"},{"constant":True,"inputs":[],"name":"allPairsLength","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":False,"stateMutability":"view","type":"function"},{"constant":False,"inputs":[{"internalType":"address","name":"tokenA","type":"address"},{"internalType":"address","name":"tokenB","type":"address"}],"name":"createPair","outputs":[{"internalType":"address","name":"pair","type":"address"}],"payable":False,"stateMutability":"nonpayable","type":"function"},{"constant":True,"inputs":[],"name":"feeTo","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":False,"stateMutability":"view","type":"function"},{"constant":True,"inputs":[],"name":"feeToSetter","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":False,"stateMutability":"view","type":"function"},{"constant":True,"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"}],"name":"getPair","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":False,"stateMutability":"view","type":"function"},{"constant":False,"inputs":[{"internalType":"address","name":"_feeTo","type":"address"}],"name":"setFeeTo","outputs":[],"payable":False,"stateMutability":"nonpayable","type":"function"},{"constant":False,"inputs":[{"internalType":"address","name":"_feeToSetter","type":"address"}],"name":"setFeeToSetter","outputs":[],"payable":False,"stateMutability":"nonpayable","type":"function"}]
 				}
 			}
 		}
-
-	def _getContract(self, _type: str, key: str = "sfi"):
+	
+	def _getContractAddress(self, key: str, network: str = "sfi") -> str:
+		"""
+		Retrieves a contract address.
+		"""
+		try:
+			return self.contracts[network][key]['ca']
+		except:
+			logger.error(f"Contract not defined.")
+			raise
+	
+	def _getContract(self, key: str, network: str = "sfi"):
 		"""
 		Retrieves a contract instance.
 		"""
 		try:
-			contract_info = self.contracts[key][_type]
-			method_name = getattr(self, f"{key}_web3", None)
+			contract_info = self.contracts[network][key]
+			method_name = getattr(self, f"{network}_web3", None)
 			if not method_name:
 				logger.error(f"Method {method_name} not found or not callable.")
 				raise
@@ -71,9 +99,10 @@ class SFI:
 			logger.error(f"Contract not defined.")
 			raise
 
-	def _executeTransaction(self, transaction: dict, key: str = "sfi") -> dict:
+
+	def _executeTransaction(self, transaction: dict, network: str = "sfi") -> dict:
 		try:
-			method_name = getattr(self, f"{key}_web3", None)
+			method_name = getattr(self, f"{network}_web3", None)
 			if not method_name:
 				logger.error(f"Method {method_name} not found or not callable.")
 				raise
@@ -92,6 +121,7 @@ class SFI:
 		except Exception as e:
 			logger.error(f"Transaction error: {str(e)}")
 			return {'status': 'failed', 'error': str(e)}
+		
 
 	def _userInfo(self) -> list:
 		stakeContract = self._getContract("stake")
@@ -120,6 +150,25 @@ class SFI:
 			return finalized
 		except:
 			return False 
+		
+	def _getPairAddress(self, pair: list) -> str:
+		contract = self._getContract('citeaFactory')
+		return contract.functions.getPair(pair[0], pair[1]).call()
+
+	def _getPairBalance(self, pair: list) -> int:
+		address = self._getPairAddress(pair)
+		contract = self.sfi_web3.eth.contract(address=address, abi=[{"constant":True,"inputs":[{"name":"account","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":False,"stateMutability":"view","type":"function"}])
+		return contract.functions.balanceOf(self.address).call()
+
+	def _getPairSupply(self, pair: list) -> int:
+		address = self._getPairAddress(pair)
+		contract = self.sfi_web3.eth.contract(address=address, abi=[{"constant":True,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":False,"stateMutability":"view","type":"function"}])
+		return contract.functions.totalSupply().call()
+
+	def _getPairReserves(self, pair: list) -> list:
+		address = self._getPairAddress(pair)
+		contract = self.sfi_web3.eth.contract(address=address, abi=[{"constant":True,"inputs":[],"name":"getReserves","outputs":[{"name":"_reserve0","type":"uint112"},{"name":"_reserve1","type":"uint112"},{"name":"_blockTimestampLast","type":"uint32"}],"payable":False,"stateMutability":"view","type":"function"}])
+		return contract.functions.getReserves().call()
 
 	def _getEventData(self, tx_hash: str) -> dict:
 		receipt = self.sfi_web3.eth.get_transaction_receipt(tx_hash)
@@ -146,40 +195,82 @@ class SFI:
 					return decoded_event
 		else:
 			return {}
+		
+	def _getAmountsIn(self, _amountOut: int, path: list) -> list:
+		contract = self._getContract('citeaRouter')
+		return contract.functions.getAmountsIn(_amountOut, path).call()
+	
+	def _getAmountsOut(self, _amountIn: int, path: list) -> list:
+		contract = self._getContract('citeaRouter')
+		return contract.functions.getAmountsOut(_amountIn, path).call()
 
-	def approveStake(self, _amount: int) -> dict:
+	def _convertKeyPair(self, pair: list) -> list:
+		try:
+			return [self._getContractAddress(token) for token in pair]
+		except KeyError as e:
+			print(f"Error: Token '{e.args[0]}' not found in self.tokens.")
+			return []
+		
+	def approve(self, _token: str, _amount: int, _spender: str, network: str = "sfi", *args) -> dict:
 		"""
-		Approves staking a specific amount of tokens.
+		Approves spending a specific amount of tokens.
+		If _token is a contract address, use web3.eth.contract with a provided ABI or a default ERC-20 ABI.
 		"""
 		try:
-			contract = self._getContract('wsfi')
-			nonce = self.sfi_web3.eth.get_transaction_count(self.address)
-
-			tx = contract.functions.approve(self.contracts['sfi']['stake']['ca'], _amount).build_transaction({
-				'chainId': self.sfi_web3.eth.chain_id,
+			web3 = getattr(self, f"{network}_web3", None)
+			if not web3:
+				logger.error(f"Web3 instance for network {network} not found.")
+				return {'status': 'failed', 'error': 'Web3 instance not available'}
+			
+			# Check if _token is a known key or a contract address
+			if _token in self.contracts[network]:
+				contract = self._getContract(_token, network)
+			else:
+				# Use provided ABI if available, otherwise default ERC-20 ABI
+				abi = args[0] if args else [
+					{
+						"constant": False,
+						"inputs": [
+							{"name": "spender", "type": "address"},
+							{"name": "value", "type": "uint256"}
+						],
+						"name": "approve",
+						"outputs": [{"name": "", "type": "bool"}],
+						"payable": False,
+						"stateMutability": "nonpayable",
+						"type": "function"
+					}
+				]
+				contract = web3.eth.contract(address=web3.to_checksum_address(_token), abi=abi)
+			
+			nonce = web3.eth.get_transaction_count(self.address)
+			tx = contract.functions.approve(
+				self.contracts[network][_spender]['ca'], _amount
+			).build_transaction({
+				'chainId': web3.eth.chain_id,
 				'from': self.address,
 				'nonce': nonce
 			})
-
+			
 			return self._executeTransaction(tx)
-
+		
 		except Exception as e:
 			logger.error(f"Error during approve: {str(e)}")
 			return {'status': 'failed', 'error': str(e)}
 
+
+		
 	def stake(self, _amount: int) -> dict:
 		"""
 		Stakes a specified amount of tokens.
 		"""
-		
 		try:
 			logger.info(f"Approving staking amount: {_amount}")
-			approval_result = self.approveStake(_amount)
+			approval_result = self.approve('wsfi', _amount, 'stake')
 			if approval_result['status'] != 'success':
-				logger.error("Approval failed. Aborting staking process.")
+				logger.error("Approval failed.")
 				return {'status': 'failed', 'error': 'Approval failed'}
 			time.sleep(5)
-
 
 			contract = self._getContract('stake')
 			nonce = self.sfi_web3.eth.get_transaction_count(self.address)
@@ -190,7 +281,7 @@ class SFI:
 				logger.warning("Invalid lock period detected, setting to default (100 days).")
 				_lockPeriod = 8640000 # 100 Days
 
-			logger.info(f"Staking amount: {_amount}, Lock period: {_lockPeriod}, Nonce: {nonce}")
+			logger.info(f"Staking amount: {_amount}, Lock period: {_lockPeriod}")
 
 			tx = contract.functions.deposit(_amount, _lockPeriod).build_transaction({
 					"chainId": self.sfi_web3.eth.chain_id, 
@@ -223,6 +314,7 @@ class SFI:
 		except Exception as e:
 			logger.error(f"Error during unstake: {str(e)}")
 			return {'status': 'failed', 'error': str(e)}
+		
 
 	def wrap(self, _amount: int) -> dict:
 		"""
@@ -283,6 +375,134 @@ class SFI:
 
 		except Exception as e:
 			logger.error(f"Error during claim: {str(e)}")
+			return {'status': 'failed', 'error': str(e)}
+		
+	def swap(self, _amount: int, pairKey: list, slippage: int = 0.02) -> dict:
+		try:
+			contract = self._getContract('citeaRouter')
+
+			logger.info(f"Approving swapping amount: {_amount}")
+			approval_result = self.approve(pairKey[0], _amount, 'citeaRouter')
+			if approval_result['status'] != 'success':
+				logger.error("Approval failed. Aborting swapping process.")
+				return {'status': 'failed', 'error': 'Approval failed'}
+			time.sleep(5)
+
+			pair = self._convertKeyPair(pairKey)
+			_amountsOut = self._getAmountsOut(_amount, pair)
+			_amountOutMin = int(_amountsOut[1]*(1 - slippage))
+			
+			logger.info(f"Setting slippage to {slippage*100}%")
+			logger.info(f"Swapping {_amount} {pairKey[0]} for {_amountOutMin} {pairKey[1]} ...")
+			
+			nonce = self.sfi_web3.eth.get_transaction_count(self.address)
+
+			tx = contract.functions.swapExactTokensForTokensSupportingFeeOnTransferTokens(_amount, _amountOutMin, pair, self.address, 2**256-1).build_transaction({
+				'chainId': self.sfi_web3.eth.chain_id,
+				'from': self.address,
+				'nonce': nonce
+			})
+
+			return self._executeTransaction(tx)
+		except Exception as e:
+			logger.error(f"Error during swap: {str(e)}")
+			return {'status': 'failed', 'error': str(e)}
+		
+	def addLiquidity(self, _amount: int, pairKey: list, slippage: int = 0.02) -> dict:
+		try:
+			contract = self._getContract('citeaRouter')
+
+			pair = self._convertKeyPair(pairKey)
+			_amountsOut = self._getAmountsOut(_amount, pair)
+
+			_amountA = _amount
+			_amountB = _amountsOut[1]
+
+			_amountAMin = int(_amountA * (1 - slippage))
+			_amountBMin = int(_amountB * (1 - slippage))
+
+			logger.info(f"Approving adding liquidity amount: {_amountA}")
+			approval_result = self.approve(pairKey[0], _amountA, 'citeaRouter')
+			if approval_result['status'] != 'success':
+				logger.error("Approval failed.")
+				return {'status': 'failed', 'error': 'Approval failed'}
+			time.sleep(5)
+
+			logger.info(f"Approving adding liquidity amount: {_amountB}")
+			approval_result = self.approve(pairKey[1], _amountB, 'citeaRouter')
+			if approval_result['status'] != 'success':
+				logger.error("Approval failed.")
+				return {'status': 'failed', 'error': 'Approval failed'}
+			time.sleep(5)
+
+			logger.info(f"Setting slippage to {slippage*100}%")
+			logger.info(f"Adding {_amount} {pairKey[0]} and {_amountsOut[1]} {pairKey[1]} to liquidity pool ...")
+			
+			nonce = self.sfi_web3.eth.get_transaction_count(self.address)
+
+			tx = contract.functions.addLiquidity(
+				pair[0],
+				pair[1],
+				_amountA,
+				_amountB,
+				_amountAMin,
+				_amountBMin,
+				self.address,
+				2**256-1
+			).build_transaction({
+				'chainId': self.sfi_web3.eth.chain_id,
+				'from': self.address,
+				'nonce': nonce
+			})
+
+			return self._executeTransaction(tx)
+		except Exception as e:
+			logger.error(f"Error during swap: {str(e)}")
+			return {'status': 'failed', 'error': str(e)}
+
+	def removeLiquidity(self, _percentage: float, pairKey: list, slippage: int = 0.02) -> dict:
+		try:
+			contract = self._getContract('citeaRouter')
+
+			pair = self._convertKeyPair(pairKey)
+			liquidity = int(self._getPairBalance(pair) * _percentage)
+
+			logger.info(f"Approving removing liquidity amount: {liquidity}")
+			approval_result = self.approve(self._getPairAddress(pair), liquidity, 'citeaRouter', 'sfi', [{"constant":False,"inputs":[{"name":"guy","type":"address"},{"name":"wad","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":False,"stateMutability":"nonpayable","type":"function"}])
+			if approval_result['status'] != 'success':
+				logger.error("Approval failed.")
+				return {'status': 'failed', 'error': 'Approval failed'}
+			time.sleep(5)
+
+			supply = self._getPairSupply(pair)
+			reserves = self._getPairReserves(pair)
+
+			_amountAMin = int(reserves[0] * (liquidity / supply) * (1 - slippage))
+			_amountBMin = int(reserves[1] * (liquidity / supply) * (1 - slippage))
+
+			logger.info(f"Setting slippage to {slippage*100}%")
+			logger.info(f"Removing {liquidity} liquidity from pool ...")
+
+			nonce = self.sfi_web3.eth.get_transaction_count(self.address)
+
+			tx = contract.functions.removeLiquidity(
+				pair[0],
+				pair[1],
+				liquidity,
+				_amountAMin,
+				_amountBMin,
+				self.address,
+				2**256-1
+			).build_transaction({
+				'chainId': self.sfi_web3.eth.chain_id,
+				'from': self.address,
+				'nonce': nonce
+			})
+
+			return self._executeTransaction(tx)
+
+		except Exception as e:
+			logger.error(f"Error during removeLiquidity: {str(e)}")
 			return {'status': 'failed', 'error': str(e)}
 
 	def initWithdrawalOnchain(self, amount: int) -> dict:
@@ -346,7 +566,7 @@ class SFI:
 				"rawTx": raw_tx
 			}
 
-			logger.info("Calling Gelato API to finish...")
+			logger.info("Calling Gelato API...")
 
 			response = requests.post(self.GELATO_API, json=raw_json)
 			resp_json = response.json()
@@ -553,32 +773,33 @@ class SFI:
 			return {'status': 'failed', 'error': str(e)}
 
 
-def executeOperation(operation, amount: int, times: int) -> None:
-    """
-    Executes a given operation a specified number of successful times.
+def executeOperation(operation, amount: int, times: int, *args) -> None:
+	"""
+	Executes a given operation a specified number of successful times.
 
-    Args:
-        operation (callable): The operation to execute.
-        amount (int): The amount to process.
-        times (int): The number of successful executions required.
-    """
-    successful_runs = 0
+	Args:
+		operation (callable): The operation to execute.
+		amount (int): The amount to process.
+		times (int): The number of successful executions required.
+		*args: Additional arguments required for the operation.
+	"""
+	successful_runs = 0
 
-    while successful_runs < times:
-        logger.info(f"Attempt {successful_runs + 1}/{times}: Executing operation.")
-        try:
-            result = operation(amount) if amount is not None else operation()
-            if result['status'] == 'success':
-                successful_runs += 1
-                logger.info(f"Attempt {successful_runs}/{times}: Operation successful.")
-            else:
-                logger.warning(f"Attempt {successful_runs + 1}/{times}: Operation failed, trying again...")
-        except Exception as e:
-            logger.error(f"Attempt {successful_runs + 1}/{times}: Error occurred during operation: {str(e)}")
-        
-        time.sleep(5) 
-
-
+	while successful_runs < times:
+		logger.info(f"Attempt {successful_runs + 1}/{times}: Executing operation.")
+		try:
+			result = operation(amount, *args) if amount is not None else operation(*args)
+			if result['status'] == 'success':
+				successful_runs += 1
+				logger.info(f"Attempt {successful_runs}/{times}: Operation successful.")
+			else:
+				logger.warning(f"Attempt {successful_runs + 1}/{times}: Operation failed, trying again...")
+		except Exception as e:
+			logger.error(f"Attempt {successful_runs + 1}/{times}: Error occurred during operation: {str(e)}")
+		
+		time.sleep(5) 
+	
+	
 def run(pk: str, config: Dict[str, int], opr_type: int = 0) -> None:
 	"""
 	Executes the main workflow based on the given configuration
@@ -605,15 +826,18 @@ def run(pk: str, config: Dict[str, int], opr_type: int = 0) -> None:
 			(sfi.stake, config.get("stakeAmount"), 2),
 			(sfi.unstake, config.get("unstakeAmount"), 1),
 			(sfi.claim, None, 2),
-			(sfi.initWithdrawal, config.get("bridgeAmount"), 5)
+			(sfi.swap, config.get("citeaConfig")['swapAmount'], 3, config.get("citeaConfig")["pair"], config.get("citeaConfig")["slippage"]),
+			(sfi.addLiquidity, config.get("citeaConfig")['addLiquidityAmount'], 1, config.get("citeaConfig")["pair"], config.get("citeaConfig")["slippage"]),
+			(sfi.removeLiquidity, config.get("citeaConfig")['removeLiquidityPerc'], 1, config.get("citeaConfig")["pair"], config.get("citeaConfig")["slippage"]),
+			# (sfi.initWithdrawal, config.get("bridgeAmount"), 5) | Disabled
 		]
 
-	for operation, amount, max_attempts in operations:
+	for operation, amount, max_attempts, *extra_args in operations:  
 		logger.info(f"Starting operation: {operation.__name__}")
 		if amount is not None:
-			executeOperation(operation, amount, max_attempts)
+			executeOperation(operation, amount, max_attempts, *extra_args)
 		else:
-			executeOperation(operation, None, max_attempts)
+			executeOperation(operation, None, max_attempts, *extra_args)
 
 	logger.info("--- Workflow completed ---")
 
@@ -630,6 +854,34 @@ def setup(auto: bool) -> None:
 				stakeAmount = float(input("Enter your stake amount > "))
 				unstakeAmount = float(input("Enter your unstake amount > "))
 				bridgeAmount = float(input("Enter your bridge amount > "))
+
+				primary_tokens = ["wsfi", "sfi"]
+				secondary_tokens = ["usdc", "aimm"]
+
+				first_token = "wsfi"
+				second_token = None
+				
+				# == Currently disabled. == 
+				#
+				# while first_token not in primary_tokens:
+				# 	first_token = input("Select the first token (wsfi/sfi) > ").strip().lower()
+				# 	if first_token not in primary_tokens:
+				# 		print("Invalid choice! Please select 'wsfi' or 'sfi'.")
+				#
+				
+
+				print("Selecting default primary token: wsfi")
+
+				while second_token not in secondary_tokens:
+					second_token = input(f"Select the secondary token ({'/'.join(secondary_tokens)}) > ").strip().lower()
+					if second_token not in secondary_tokens:
+						print(f"Invalid choice! Please select 'usdc' or 'aimm'.")
+
+				swapAmount = float(input(f"Enter swap amount for {first_token} -> {second_token} > "))
+				addLiquidityAmount = float(input(f"Enter liquidity amount for {first_token} -> {second_token} > "))
+				swapSlippage = float(input(f"Enter slippage for {first_token} -> {second_token} (Eg. 2% = 0.02) > "))
+				removeLiquidityPerc = float(input(f"Enter percentage of liquidity to remove for {first_token} -> {second_token} (Eg. 20% = 0.2) > "))
+
 			except ValueError:
 				print("Error: Please enter valid numeric values for the amounts.")
 				return
@@ -640,16 +892,30 @@ def setup(auto: bool) -> None:
 			unstakeAmount = 1
 			bridgeAmount = 0.2
 
+			first_token = "wsfi"  
+			second_token = "aimm" 
+			swapAmount = 0.1
+			addLiquidityAmount = 0.1
+			removeLiquidityPerc = 0.2
+			swapSlippage = 0.02
+
 		try:
 			config = {
 				"wrapAmount": int(wrapAmount * 10**18),
 				"unwrapAmount": int(unwrapAmount * 10**18),
 				"stakeAmount": int(stakeAmount * 10**18),
 				"unstakeAmount": int(unstakeAmount * 10**18),
-				"bridgeAmount": int(bridgeAmount * 10**18)
+				"bridgeAmount": int(bridgeAmount * 10**18),
+				"citeaConfig": {
+					"pair": [first_token, second_token],
+					"swapAmount": int(swapAmount * 10**18),
+					"addLiquidityAmount": int(addLiquidityAmount * 10**18),
+					"removeLiquidityPerc": removeLiquidityPerc,
+					"slippage": swapSlippage
+				}
 			}
 		except Exception as e:
-			print(f"Error converting amounts to Wei: {e}")
+			print(f"Error: {e}")
 			return
 
 		try:
