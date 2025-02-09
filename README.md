@@ -29,6 +29,12 @@ Enter your unwrap amount >
 Enter your stake amount > 
 Enter your unstake amount > 
 Enter your bridge amount > 
+Selecting default primary token: wsfi
+Select the secondary token (aimm/usdc) >
+Enter swap amount for wsfi -> aimm >
+Enter liquidity amount for wsfi -> aimm >
+Enter slippage for wsfi -> aimm (Eg. 2% = 0.02) > 
+Enter percentage of liquidity to remove for wsfi -> aimm (Eg. 20% = 0.2) > 
 
 Setup complete. You can run the script now.
 ```
@@ -54,8 +60,8 @@ python3 sfis.py -pk <your-private-key>
 python3 sfis.py -f <path-to-private-key-file>
 ```
 ## Important Notes
-- **Daily Tasks**: The script will perform daily operations, such as (un)staking, (un)wrapping, and bridging tokens.
-- **Bridging Task**: The bridging task requires waiting for Layer 1 (L1) confirmation. After running the script for the first time, please allow for a 1-hour wait before re-running the script with the `-P` and `-F` flags to prove and finalize the bridging process.
+- **Daily Tasks**: The script will perform daily operations, such as (un)staking, (un)wrapping, swapping and bridging tokens.
+- **Bridging Task**: ~~The bridging task requires waiting for Layer 1 (L1) confirmation. After running the script for the first time, please allow for a 1-hour wait before re-running the script with the `-P` and `-F` flags to prove and finalize the bridging process.~~ Disabled.
 ```bash
 python3 sfis.py ... -P
 ```
