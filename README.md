@@ -35,11 +35,13 @@ Enter swap amount for wsfi -> aimm >
 Enter liquidity amount for wsfi -> aimm >
 Enter slippage for wsfi -> aimm (Eg. 2% = 0.02) > 
 Enter percentage of liquidity to remove for wsfi -> aimm (Eg. 20% = 0.2) > 
+Enter the travel destination address (Leaves empty to use default) >
+Enter travel amount > 
 
 Setup complete. You can run the script now.
 ```
 
-Alternatively, if you wish to use pre-defined values (for example, from a previous configuration or an example setup), you can initialize with the -a flag:
+Alternatively, if you wish to use pre-defined values, you can initialize with the -a flag:
 ```bash
 python3 sfis.py -i -a
 ```
