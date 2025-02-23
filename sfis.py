@@ -553,7 +553,7 @@ class SFI:
 				"value": amount,
 				"chainId": self.sfi_web3.eth.chain_id,
 				"gas": 21000,
-				"gasPrice": self.sfi_web3.eth.gas_price,
+				"gasPrice": int(self.sfi_web3.eth.gas_price * 1.5), # Increased by 50%
 			}
 
 			txExec = self._executeTransaction(tx)
