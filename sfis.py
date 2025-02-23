@@ -506,92 +506,13 @@ class SFI:
 			logger.error(f"Error during removeLiquidity: {str(e)}")
 			return {'status': 'failed', 'error': str(e)}
 
-	def crymboTravelRules(self, amount: int, to: str = "0x03a519F1bD19CE974566bA91190b62D5C00E3A81") -> dict:
+	def crymboTravelRules(self) -> dict:
 		"""
-		Handles Crymbo Travel Rules compliance by fetching user data and sending SFI.
+		Handles Crymbo Travel Rules task.
 		"""
 		try:
-			# Initialize a new session to get fake data
-			session = requests.Session()
-
-			req = session.get(self.CRYMBO_API + "/api/auth/csrf")
-			csrf = req.json().get('csrfToken')
-			if not csrf:
-				raise ValueError("Failed to retrieve CSRF token")
-
-			session.post(self.CRYMBO_API + "/api/auth/callback/credentials", data={
-				"walletAddress": "0xdda7fAcac3a29DC201ec5BdD349FdF9f87317556",
-				"redirect": "false",
-				"csrfToken": csrf,
-				"callbackUrl": self.CRYMBO_API,
-				"json": "true"
-			})
-
-			# Get the fake data
-			req = session.get(self.CRYMBO_API + "/api/auth/session")
-			res = req.json()
-			if "user" not in res:
-				raise ValueError("Failed to retrieve user data from session.")
-
-			data = res["user"]
-
-			# Build travel role data
-			trd = {
-				"firstname": data.get("firstname", ""),
-				"lastname": data.get("lastname", ""),
-				"email": data.get("email", ""),
-				"phone": data.get("phone", ""),
-				"address": data.get("contactAddress", ""),
-			}
-
-			# Send SFI
-			nonce = self.sfi_web3.eth.get_transaction_count(self.address)
-
-			tx = {
-				"nonce": nonce,
-				"to": to,
-				"value": amount,
-				"chainId": self.sfi_web3.eth.chain_id,
-				"gas": 21000,
-				"gasPrice": self.sfi_web3.eth.gas_price,
-			}
-
-			txExec = self._executeTransaction(tx)
-			if txExec["status"] == "failed":
-				raise ValueError("Failed to send SFI.")
-
-			txHash = txExec.get("tx")
-
-			# Build payload
-			transactions_payload = {
-				"address_from": self.address,
-				"address_to": to,
-				"amount": str(amount / (10**18)),
-				"travel_role_data": json.dumps(trd),
-				"travel_role_status": "Sent",
-				"txHash": "0x" + txHash,
-			}
-
-			trx_payload = {
-				"action": "addTransaction",
-				"network": "SFI",
-				"txHash": "0x" + txHash,
-			}
-
-			# Send travel rule data
-			while True:
-				req = requests.post(self.CRYMBO_API + "/api/transactions", json=transactions_payload)
-				res_data = req.json()
-				if "error" not in res_data:
-					break
-
-			while True:
-				req = requests.post(self.CRYMBO_API + "/api/trx", json=trx_payload)
-				res_data = req.json()
-				if res_data.get("success"):
-					break
-
-			return {"status": "success", "msg": "Travel rule data sent."}
+			req = requests.get(self.CRYMBO_API + "/api/sfi-api?address=" + self.address)
+			logger.info(req.text)
 
 		except Exception as e:
 			logger.error(f"Error during crymboTravelRules: {str(e)}")
@@ -923,7 +844,7 @@ def run(pk: str, config: Dict[str, int], opr_type: int = 0) -> None:
 			(sfi.swap, config.get("citeaConfig")['swapAmount'], 3, config.get("citeaConfig")["pair"], config.get("citeaConfig")["slippage"]),
 			(sfi.addLiquidity, config.get("citeaConfig")['addLiquidityAmount'], 1, config.get("citeaConfig")["pair"], config.get("citeaConfig")["slippage"]),
 			(sfi.removeLiquidity, config.get("citeaConfig")['removeLiquidityPerc'], 1, config.get("citeaConfig")["pair"], config.get("citeaConfig")["slippage"]),
-			(sfi.crymboTravelRules, config.get("travelConfig")['amount'], 3,  config.get("travelConfig")['to'])
+			(sfi.crymboTravelRules, None, 3)
 			# (sfi.initWithdrawal, config.get("bridgeAmount"), 5) | Disabled
 		]
 
@@ -976,10 +897,10 @@ def setup(auto: bool) -> None:
 				swapSlippage = float(input(f"Enter slippage for {first_token} -> {second_token} (Eg. 2% = 0.02) > "))
 				removeLiquidityPerc = float(input(f"Enter percentage of liquidity to remove for {first_token} -> {second_token} (Eg. 20% = 0.2) > "))
 
-				travelTo = input("Enter the travel destination address (Leaves empty to use default) > ")
-				if not travelTo:
-					travelTo = "0x03a519F1bD19CE974566bA91190b62D5C00E3A81"
-				travelAmount = float(input("Enter travel amount > "))
+				# travelTo = input("Enter the travel destination address (Leaves empty to use default) > ")
+				# if not travelTo:
+				# 	travelTo = "0x03a519F1bD19CE974566bA91190b62D5C00E3A81"
+				# travelAmount = float(input("Enter travel amount > "))
 
 			except ValueError:
 				print("Error: Please enter valid numeric values for the amounts.")
@@ -998,8 +919,8 @@ def setup(auto: bool) -> None:
 			removeLiquidityPerc = 0.2
 			swapSlippage = 0.02
 
-			travelAmount = 0.0001
-			travelTo = "0x03a519F1bD19CE974566bA91190b62D5C00E3A81"
+			# travelAmount = 0.0001
+			# travelTo = "0x03a519F1bD19CE974566bA91190b62D5C00E3A81"
 
 		try:
 			config = {
@@ -1015,10 +936,10 @@ def setup(auto: bool) -> None:
 					"removeLiquidityPerc": removeLiquidityPerc,
 					"slippage": swapSlippage
 				},
-				"travelConfig": {
-					"amount": int(travelAmount * 10**18),
-					"to": travelTo
-				}
+				# "travelConfig": {
+				# 	"amount": int(travelAmount * 10**18),
+				# 	"to": travelTo
+				# }
 			}
 		except Exception as e:
 			print(f"Error: {e}")
