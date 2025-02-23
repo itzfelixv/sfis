@@ -512,7 +512,11 @@ class SFI:
 		"""
 		try:
 			req = requests.get(self.CRYMBO_API + "/api/sfi-api?address=" + self.address)
-			logger.info(req.text)
+			res = req.json()
+			logger.info(res)
+
+			if res['msg'] == "Points added":
+				return {"status": "success", "msg": "Points added"}
 
 		except Exception as e:
 			logger.error(f"Error during crymboTravelRules: {str(e)}")
