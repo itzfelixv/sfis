@@ -1,4 +1,8 @@
 # SingularityFinance Script
+
+> [!IMPORTANT]
+> The testnet wrapped up on **April 4th**. This tool is no longer necessary for interacting with the testnet.
+
 ## Overview
 SingularityFinance Script (SFIS) is designed for interacting with testnets in order to participate in airdrop events. This script automates essential tasks like token wrapping, unwrapping, staking, unstaking, and bridging, allowing you to efficiently manage your testnet assets and increase your chances of qualifying for airdrops. By running the script, you can perform routine actions required by various projects on supported testnets, and potentially earn rewards in the form of airdrops.
 ## Installation
